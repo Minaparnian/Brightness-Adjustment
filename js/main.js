@@ -11,6 +11,13 @@ $(document).ready(function() {
         reader.onload = fileOnload;
         reader.readAsDataURL(file);
     });
+    
+// Use some jQuery to trigger click on canvas to input
+    $('#canvas').on('click', function() {
+        $('#imgfile').trigger('click');
+    });
+
+
 // Make an img element with the data URL and draw it on the canvas.
     function fileOnload(e) {
       //Like this in javascript make an image
