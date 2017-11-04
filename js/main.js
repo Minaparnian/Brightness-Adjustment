@@ -29,11 +29,12 @@ function loadImage() {
            img.src = fr.result;
        }
 
+// function called imageLoaded(), which is executed once the page finishes loading
        function imageLoaded() {
            var canvas = document.getElementById("canvas")
            var ctx = canvas.getContext("2d");
            ctx.drawImage(img,0,0, canvas.width, canvas.height);
-           alert(canvas.toDataURL("image/png"));
+          //  alert(canvas.toDataURL("image/png"));
        }
 
        function write(msg) {
