@@ -1,66 +1,26 @@
-function loadImage() {
-       var input, file, fr, img;
+// Dispatch a change event to file input element.
+$(document).ready(function() {
+    $('#imgfile').change(function(e) {
+        var file = e.target.files[0],
+            imageType = /image.*/;
 
-       if (typeof window.FileReader !== 'function') {
-           write("The file API isn't supported on this browser yet.");
-           return;
-       }
-
-       input = document.getElementById('imgfile');
-       if (!input) {
-           write("Um, couldn't find the imgfile element.");
-       }
-       else if (!input.files) {
-           write("This browser doesn't seem to support the `files` property of file inputs.");
-       }
-       else if (!input.files[0]) {
-           write("Please select a file before clicking 'Load'");
-       }
-       else {
-           file = input.files[0];
-           fr = new FileReader();
-           fr.onload = createImage;
-           fr.readAsDataURL(file);
-       }
-
-       function createImage() {
-           img = new Image();
-           img.onload = imageLoaded;
-           img.src = fr.result;
-       }
-
-// function called imageLoaded(), which is executed once the page finishes loading
-       function imageLoaded() {
-           var canvas = document.getElementById("canvas")
-           var ctx = canvas.getContext("2d");
-           ctx.drawImage(img,0,0, canvas.width, canvas.height);
-          //  alert(canvas.toDataURL("image/png"));
-       }
-
-       function write(msg) {
-           var p = document.createElement('p');
-           p.innerHTML = msg;
-           document.body.appendChild(p);
-       }
-   }
-
-
-
-
-
-
-
-
-
-
-// function called draw(), which is executed once the page finishes loading
-// var image = new Image();
-// image.src = "img/pleasure-garden.jpg";
-// function draw() {
-//   var canvas = document.getElementById('canvas');
-//   if (canvas.getContext) {
-//     var ctx = canvas.getContext('2d');
-//     ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
-//
-//   }
-// }
+        if (!file.type.match(imageType))
+            return;
+// Get the uploaded file from the event handler and get a data URL by using the FileReader object.
+        var reader = new FileReader();
+        reader.onload = fileOnload;
+        reader.readAsDataURL(file);
+    });
+// Make an img element with the data URL and draw it on the canvas.
+    function fileOnload(e) {
+      //Like this in javascript make an image
+     // img = new Image();
+     //img.onload = imageLoaded;
+        var $img = $('<img>', { src: e.target.result });
+        $img.load(function() {
+            var canvas = $('#canvas')[0];
+            var context = canvas.getContext('2d');
+            context.drawImage(this, 0, 0, canvas.width, canvas.height );
+        });
+    }
+});
