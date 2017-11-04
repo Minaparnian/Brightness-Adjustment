@@ -10,8 +10,16 @@
   <title>Brightness-Adjustment</title>
 </head>
 <body onload="draw();">
+
+
+
   <canvas id="canvas" width="600" height="384">
     <!-- <img src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg" width="150" height="150" alt=""/> -->
   </canvas>
+
+    <form action='#' onsubmit="return false;">
+        <input type='file' id='imgfile' />
+        <input type="button" id="btnload" value="load" onClick="loadImage();"/>
+    </form>
 </body>
 </html>
