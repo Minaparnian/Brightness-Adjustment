@@ -36,10 +36,10 @@ canvas {
 
 }
 
-@media(max-width:1200px) {
+@media(max-width:750px) {
     .container {
     margin: 50px auto;
-    
+
 
     }
     canvas {

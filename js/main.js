@@ -25,8 +25,8 @@ $(document).ready(function() {
       //Like this in javascript make an image
      // img = new Image();
      //img.onload = imageLoaded;
-        var $img = $('<img>', { src: e.target.result });
-        $img.load(function() {
+        var img = $('<img>', { src: e.target.result });
+        img.load(function() {
             var canvas = $('#canvas')[0];
             var context = canvas.getContext('2d');
             context.drawImage(this, 0, 0, canvas.width, canvas.height );
@@ -37,13 +37,15 @@ $(document).ready(function() {
 
     var slider = $('#slider').change(function(){
         // console.log(this.value);
+        // debugger;
         var brightness = $('#brightness')[0];
-        var val = parseInt($( this ).val()) -50;
-        // console.log(this.value);
-        if (val > 50 || val < -50)
+        var val = parseInt($( this ).val());
+        if (val > 40 || val < -40)
         return false;
 
         brightness.style.backgroundColor = val > 0 ? 'white' : 'black';
+        //Use math to get the opacity value between 0 - 1.
+        //Math.abs returns the absolute value of a number like -2 to 2.
         brightness.style.opacity = Math.abs(val/100) * 2;
 
     })
