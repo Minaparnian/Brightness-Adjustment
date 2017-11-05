@@ -11,18 +11,16 @@
   <title>Brightness-Adjustment</title>
 </head>
 <body>
-<div class="container">
-  <canvas id="canvas" width="600" height="384">
-    <!-- <img src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg" width="150" height="150" alt=""/> -->
-  </canvas>
 
-    <form action='#' onsubmit="return false;">
-      <input type='file' id='imgfile' style="display: none;"/>
-      <input id="slider" type="range" min="0" max="100" step="1" value="50" style="display: none;">
-    </form>
-
-</div>
-
+    <div class="container">
+        <canvas id="brightness" width="600" height="384"></canvas>
+        <canvas id="canvas" width="600" height="384">
+        </canvas>
+    </div>
+        <form action='#' onsubmit="return false;">
+          <input type='file' id='imgfile' style="display: none;"/>
+          <input id="slider" type="range" min="10" max="90" step="0.2" value="50" >
+        </form>
 
 </body>
 </html>

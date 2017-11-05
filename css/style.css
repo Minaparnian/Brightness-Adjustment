@@ -4,15 +4,31 @@ body {
 
 }
 
-canvas {
-  border: 1px solid black;
+/*put both canavs in the canvas which will need position relative order for its child elements to be*/
+.container {
   margin: 50px auto;
-  background-color: white;
+  position: relative;
+  width: 600px;
+  height: 384px;
+
 }
 
-.container {
-  margin: 0 auto;
+canvas {
+  background:lightgrey;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+
 }
+
+#brightness{
+
+    background:white;
+    opacity:0;
+    z-index: 1;
+}
+
 
 #slider{
     width:40%;
@@ -21,9 +37,9 @@ canvas {
 
 @media(max-width:1200px) {
   .container {
-  margin: 0 50px;
+  margin: 50px auto;
   }
-  #canvas {
+  canvas {
   width: 100%;
   height: auto;
  }

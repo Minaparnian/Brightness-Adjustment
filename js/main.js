@@ -12,8 +12,8 @@ $(document).ready(function() {
         reader.readAsDataURL(file);
     });
 
-// Use some jQuery to trigger click on canvas to input
-    $('#canvas').on('click', function() {
+// Use some jQuery to trigger click on brightness canvas to input file.
+    $('#brightness').on('click', function() {
         $('#imgfile').trigger('click');
         //show the slider after click to choose the image
         $('#slider').show();
@@ -37,14 +37,14 @@ $(document).ready(function() {
 
     var slider = $('#slider').change(function(){
         // console.log(this.value);
-        var canvas = $('#canvas')[0];
-        var val = parseInt($( this ).val()) - 50;
+        var brightness = $('#brightness')[0];
+        var val = parseInt($( this ).val()) -50;
         // console.log(this.value);
         if (val > 50 || val < -50)
         return false;
 
-        canvas.style.backgroundColor = val > 50 ? 'white' : 'black';
-        canvas.style.opacity = Math.abs(val/100) *  2;
+        brightness.style.backgroundColor = val > 0 ? 'white' : 'black';
+        brightness.style.opacity = Math.abs(val/100) * 2;
 
     })
 });
