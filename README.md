@@ -17,7 +17,6 @@ Added in HTML5, the HTML <canvas> element with id of canvas to draw image via sc
 ```
 <canvas id="canvas" width="600" height="384"></canvas>
 
-
 ```
 
 Make an img element with the data URL and draw it on the canvas.
@@ -34,6 +33,7 @@ function fileOnload(e) {
           context.drawImage(this, 0, 0, canvas.width, canvas.height );
       });
   }
+
 ```
 
 Add <input> elements with type="file" which let user choose one or more files from their device storage. Once chosen, the files can be uploaded to a server using form submission, or manipulated using JavaScript code and the [File API.](https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications).
@@ -106,6 +106,7 @@ Add <input> elements of type "range" with the id of slider which let user specif
 
 ```
 <input id="slider" type="range" min="-40" max="40" step="0.2" value="0" >
+
 ```
 
 Duplicated canvas with same features but set the z-index to 1 to be on the top and set the brightness variable on that.
@@ -123,7 +124,6 @@ Duplicated canvas with same features but set the z-index to 1 to be on the top a
 ### Javascript(jQuery)
 
 ```
-
 var slider = $('#slider').change(function(){
     var brightness = $('#brightness')[0];
     var val = parseInt($( this ).val());
@@ -135,7 +135,6 @@ var slider = $('#slider').change(function(){
 
 })
 });
-
 
 ```
 
