@@ -12,7 +12,7 @@ One of the more exciting features of <canvas> is the ability to use images.  The
 Added in HTML5, the HTML <canvas> element with id of canvas to draw image via scripting in JavaScript.
 
 
-###HTML
+### HTML
 
 ```
 <canvas id="canvas" width="600" height="384"></canvas>
@@ -22,7 +22,7 @@ Added in HTML5, the HTML <canvas> element with id of canvas to draw image via sc
 
 Make an img element with the data URL and draw it on the canvas.
 
-###Javascript(jQuery)
+### Javascript(jQuery)
 
 
 ```  
@@ -36,10 +36,10 @@ function fileOnload(e) {
   }
 ```
 
-Add <input> elements with type="file" which let user choose one or more files from their device storage. Once chosen, the files can be uploaded to a server using form submission, or manipulated using JavaScript code and the [Link:File API.](https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications).
+Add <input> elements with type="file" which let user choose one or more files from their device storage. Once chosen, the files can be uploaded to a server using form submission, or manipulated using JavaScript code and the [File API.](https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications).
 
 
-###HTML
+### HTML
 
 
 ```
@@ -53,7 +53,7 @@ Add <input> elements with type="file" which let user choose one or more files fr
 Add `style="display: none;"` to disable the input and use Javascript to trigger to the canvas to choose the file.
 Also show the slider after click to choose the image.
 
-###HTML
+### HTML
 
 ```
 <input type='file' id='imgfile' style="display: none;"/>
@@ -64,7 +64,7 @@ Also show the slider after click to choose the image.
 <input id="slider" type="range" min="-40" max="40" step="0.2" value="0" style="display: none;" >
 
 ```
-###Javascript(jQuery)
+### Javascript(jQuery)
 
 ```
 
@@ -81,7 +81,7 @@ We add an event listener to the input to listen for changes to its selected valu
 The readAsDataURL method is used to read the contents of the specified Blob or File. When the read operation is finished, the readyState becomes DONE.
 
 
-###Javascript(jQuery)
+### Javascript(jQuery)
 
 
 
@@ -100,7 +100,7 @@ The readAsDataURL method is used to read the contents of the specified Blob or F
 
 Add <input> elements of type "range" with the id of slider which let user specify a numeric value which must be no less than a given value, and no more than another given value.
 
-###HTML
+### HTML
 
 
 
@@ -110,7 +110,7 @@ Add <input> elements of type "range" with the id of slider which let user specif
 
 Duplicated canvas with same features but set the z-index to 1 to be on the top and set the brightness variable on that.
 
-###HTML
+### HTML
 
 
 
@@ -120,7 +120,7 @@ Duplicated canvas with same features but set the z-index to 1 to be on the top a
 ```
 
 
-###Javascript(jQuery)
+### Javascript(jQuery)
 
 ```
 
