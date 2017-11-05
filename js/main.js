@@ -39,7 +39,7 @@ $(document).ready(function() {
         // console.log(this.value);
         var canvas = $('#canvas')[0];
         var val = parseInt($( this ).val()) - 50;
-        // console.log(this.val);
+        // console.log(this.value);
         if (val > 50 || val < -50)
         return false;
 
