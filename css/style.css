@@ -13,6 +13,11 @@ canvas {
   margin: 0 auto;
 }
 
+#slider{
+    width:40%;
+    height:22px;
+}
+
 @media(max-width:1200px) {
   .container {
   margin: 0 50px;
