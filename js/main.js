@@ -45,7 +45,7 @@ $(document).ready(function() {
 
         brightness.style.backgroundColor = val > 0 ? 'white' : 'black';
         //Use math to get the opacity value between 0 - 1.
-        //Math.abs returns the absolute value of a number like -2 to 2.
+        //Math.abs returns the absolute value of a number like -2 to 2
         brightness.style.opacity = Math.abs(val/100) * 2;
 
     })
